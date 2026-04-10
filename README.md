@@ -153,6 +153,101 @@ PY
 
 > Lưu ý: `GeminiEmbedder` cần `GEMINI_API_KEY` hoặc `GOOGLE_API_KEY` hợp lệ trong môi trường hoặc `.env`.
 
+## Chạy Code Của Tôi Với Gemini
+
+Phần mở rộng trong repo này hỗ trợ corpus luật song ngữ, persistent vector store, benchmark golden queries và UI demo.
+Mình giữ raw `data/` ở local và đẩy file nén `legal_corpus_data.zip` lên git để repo nhẹ hơn.
+
+### Bước 1: Giải nén dữ liệu
+
+Nếu bạn mới clone repo, hãy giải nén lại file dữ liệu vào thư mục `data/`.
+
+**PowerShell**
+
+```powershell
+Expand-Archive -LiteralPath .\legal_corpus_data.zip -DestinationPath .\data -Force
+```
+
+### Bước 2: Cấu hình API key
+
+Bạn có thể set trực tiếp trong terminal hoặc tạo file `.env`.
+
+**PowerShell**
+
+```powershell
+$env:EMBEDDING_PROVIDER="gemini"
+$env:GEMINI_API_KEY="your-ai-studio-key"
+$env:GEMINI_EMBEDDING_MODEL="gemini-embedding-2-preview"
+$env:GEMINI_CHAT_MODEL="gemma-4-31b-it"
+```
+
+**Ví dụ `.env`**
+
+```env
+EMBEDDING_PROVIDER=gemini
+GEMINI_API_KEY=your-ai-studio-key
+GEMINI_EMBEDDING_MODEL=gemini-embedding-2-preview
+GEMINI_CHAT_MODEL=gemma-4-31b-it
+```
+
+### Bước 3: Verify key / model
+
+```powershell
+python list_gemini_embedding_models.py
+```
+
+Lệnh này giúp kiểm tra API key có dùng được không và account hiện support các model embedding nào.
+
+### Bước 4: Chạy end-to-end nhanh nhất
+
+Lệnh dưới đây sẽ:
+- index full legal corpus vào persistent store
+- chạy golden queries benchmark
+- mở luôn UI local để demo agent
+
+```powershell
+python run_legal_e2e.py --collection legal_full_gemini --reindex --serve --chat-model gemma-4-31b-it
+```
+
+Sau khi chạy xong, mở:
+
+```text
+http://127.0.0.1:7860
+```
+
+### Các lệnh riêng lẻ
+
+**Chỉ index corpus**
+
+```powershell
+python index_legal_corpus.py --data-dir data --collection legal_full_gemini --strategy structured_legal --reset
+```
+
+**Chỉ chạy benchmark**
+
+```powershell
+python run_golden_queries.py --data-dir data --collection legal_full_gemini --strategy structured_legal
+```
+
+**Chỉ mở UI demo**
+
+```powershell
+python run_legal_agent_ui.py --collection legal_full_gemini --chat-model gemma-4-31b-it
+```
+
+**Demo hỏi đáp một câu trong terminal**
+
+```powershell
+python run_legal_agent_demo.py --collection legal_full_gemini --query "Một tổ chức cần những điều kiện nào để được công nhận là pháp nhân?"
+```
+
+### Ghi chú thực tế
+
+- Collection full mình dùng trong benchmark là `legal_full_gemini`
+- Chunking strategy tốt nhất theo ablation hiện tại là `structured_legal`
+- Lần đầu index sẽ khá lâu vì phải embedding toàn bộ corpus
+- Những lần sau sẽ nhanh hơn nhờ persistent store và embedding cache
+
 ---
 
 ## Cấu Trúc Thư Mục
