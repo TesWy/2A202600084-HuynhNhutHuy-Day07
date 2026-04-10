@@ -1,11 +1,15 @@
 pytest>=7.0
 python-dotenv>=1.0
+pypdf>=4.0
+flask>=3.0
 
 # Optional manual-demo extras
 # Install local embedder support with:
 #   pip install sentence-transformers
 # Install OpenAI embedder support with:
 #   pip install openai
+# Gemini / Google AI Studio embedder uses the standard library only:
+#   set GEMINI_API_KEY (or GOOGLE_API_KEY) and EMBEDDING_PROVIDER=gemini
 # Install both optional embedders with:
 #   pip install openai sentence-transformers
 # sentence-transformers>=3.0

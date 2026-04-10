@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LexScope Agent Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='legal_agent_ui.css', v=asset_version) }}">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="masthead">
+        <div class="masthead-copy">
+          <p class="eyebrow">Interactive Legal Retrieval Demo</p>
+          <h1>LexScope Agent Console</h1>
+          <p class="lede">
+            Ask across your indexed legal corpus, inspect retrieved evidence, and keep a running conversation
+            without dropping back to the terminal.
+          </p>
+        </div>
+        <div class="status-strip">
+          <div>
+            <span class="status-label">Embedding</span>
+            <strong id="embedding-backend">{{ default_backend }}</strong>
+          </div>
+          <div>
+            <span class="status-label">Answer Mode</span>
+            <strong id="generation-mode">{{ generation_mode }}</strong>
+          </div>
+          <div>
+            <span class="status-label">Chunks</span>
+            <strong id="collection-count">{{ initial_summary.count }}</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="control-column">
+          <section class="control-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Corpus</p>
+              <h2>Collection & Filters</h2>
+            </div>
+
+            <label class="field">
+              <span>Collection</span>
+              <select id="collection">
+                {% for collection in collections %}
+                <option value="{{ collection }}" {% if collection == default_collection %}selected{% endif %}>{{ collection }}</option>
+                {% endfor %}
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Document Title</span>
+              <select id="document-title">
+                <option value="">All documents</option>
+                {% for title in initial_summary.titles %}
+                <option value="{{ title }}">{{ title }}</option>
+                {% endfor %}
+              </select>
+            </label>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>Article</span>
+                <input id="article-number" type="text" placeholder="e.g. 74">
+              </label>
+              <label class="field">
+                <span>Year</span>
+                <select id="year">
+                  <option value="">All years</option>
+                  {% for year in initial_summary.years %}
+                  <option value="{{ year }}">{{ year }}</option>
+                  {% endfor %}
+                </select>
+              </label>
+            </div>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>Language</span>
+                <select id="language">
+                  <option value="">All</option>
+                  {% for language in initial_summary.languages %}
+                  <option value="{{ language }}">{{ language }}</option>
+                  {% endfor %}
+                </select>
+              </label>
+              <label class="field">
+                <span>Domain</span>
+                <select id="domain">
+                  <option value="">All</option>
+                  {% for domain in initial_summary.domains %}
+                  <option value="{{ domain }}">{{ domain }}</option>
+                  {% endfor %}
+                </select>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Top K</span>
+              <input id="top-k" type="range" min="1" max="5" value="3">
+              <div class="range-caption">Retrieve <strong id="top-k-value">3</strong> chunks</div>
+            </label>
+          </section>
+
+          <section class="control-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Quick Start</p>
+              <h2>Suggested Questions</h2>
+            </div>
+            <div class="chip-list">
+              {% for question in suggested_questions %}
+              <button class="question-chip" type="button" data-question="{{ question }}">{{ question }}</button>
+              {% endfor %}
+            </div>
+          </section>
+        </aside>
+
+        <section class="chat-column">
+          <section class="ask-panel">
+            <form id="ask-form">
+              <label class="question-field" for="query">
+                <span class="eyebrow">Question</span>
+                <textarea id="query" rows="3" placeholder="Ask about an article, a definition, or compare provisions across the corpus."></textarea>
+              </label>
+              <div class="form-actions">
+                <button id="ask-button" type="submit">Ask Agent</button>
+                <p id="request-status" class="request-status">Ready.</p>
+              </div>
+            </form>
+          </section>
+
+          <section class="conversation-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Session</p>
+              <h2>Conversation</h2>
+            </div>
+            <div id="conversation" class="conversation">
+              <article class="message message-system">
+                <div class="message-meta">System</div>
+                <p>The demo keeps your chat history in this browser tab. Ask a question to begin.</p>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <aside class="evidence-column">
+          <section class="evidence-panel">
+            <div class="panel-heading">
+              <p class="eyebrow">Retrieved Evidence</p>
+              <h2>Source Rail</h2>
+            </div>
+            <div id="sources" class="sources">
+              <article class="source-empty">
+                <p>Retrieved chunks will appear here with rank, score, and metadata.</p>
+              </article>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      window.LEGAL_AGENT_BOOTSTRAP = {
+        defaultCollection: {{ default_collection|tojson }},
+        initialSummary: {{ initial_summary|tojson }}
+      };
+    </script>
+    <script src="{{ url_for('static', filename='legal_agent_ui.js', v=asset_version) }}"></script>
+  </body>
+</html>

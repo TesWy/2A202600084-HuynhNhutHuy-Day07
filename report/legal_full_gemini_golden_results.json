@@ -1,0 +1,457 @@
+{
+  "generated_at": "2026-04-10T17:41:52",
+  "embedding_backend": "models/gemini-embedding-2-preview",
+  "collection": "legal_full_gemini",
+  "strategy": "structured_legal",
+  "parameters": {
+    "chunk_size": 1400,
+    "overlap": 150,
+    "max_sentences": 4,
+    "top_k": 3
+  },
+  "source_files": 8,
+  "stored_chunks": 1398,
+  "golden_file": "D:\\VinUni\\assignments\\Day_7_Lab_data\\report\\golden_queries_legal.json",
+  "evaluations": [
+    {
+      "summary": {
+        "mode": "no_filter",
+        "queries": 5,
+        "top1_exact_rate": 0.8,
+        "top3_exact_rate": 1.0,
+        "pass_rate": 1.0,
+        "avg_keyword_recall": 1.0
+      },
+      "queries": [
+        {
+          "id": "q1",
+          "query": "Những phương thức bảo vệ quyền dân sự khi quyền dân sự bị xâm phạm là gì?",
+          "gold_answer": "Khi quyền dân sự bị xâm phạm, chủ thể có quyền tự bảo vệ hoặc yêu cầu cơ quan, tổ chức có thẩm quyền công nhận và bảo đảm quyền dân sự, buộc chấm dứt hành vi xâm phạm, buộc xin lỗi cải chính công khai, buộc thực hiện nghĩa vụ, buộc bồi thường thiệt hại, hủy quyết định cá biệt trái pháp luật và các yêu cầu khác theo luật.",
+          "mode": "no_filter",
+          "metadata_filter": {},
+          "expected_document_title": "Bộ Luật dân sự 2015",
+          "expected_article_number": "11",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "công nhận",
+            "chấm dứt hành vi xâm phạm",
+            "xin lỗi",
+            "thực hiện nghĩa vụ",
+            "bồi thường thiệt hại",
+            "hủy quyết định"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8031366021105965,
+              "document_title": "Bộ Luật dân sự 2015",
+              "article_number": "11",
+              "language": "vi",
+              "preview": "Phần thứ nhất | QUY ĐỊNH CHUNG | Chương II | XÁC LẬP, THỰC HIỆN VÀ BẢO VỆ QUYỀN DÂN SỰ Điều 11. Các phương thức bảo vệ quyền dân sự  Khi quyền dân sự của cá nhân, pháp nhân bị xâm phạm thì chủ thể đó có quyền tự bảo vệ t"
+            },
+            {
+              "rank": 2,
+              "score": 0.7497419867027868,
+              "document_title": "Bộ Luật dân sự 2015",
+              "article_number": "14",
+              "language": "vi",
+              "preview": "Phần thứ nhất | QUY ĐỊNH CHUNG | Chương II | XÁC LẬP, THỰC HIỆN VÀ BẢO VỆ QUYỀN DÂN SỰ Điều 14. Bảo vệ quyền dân sự thông qua cơ quan có thẩm quyền  1. Tòa án, cơ quan có thẩm quyền khác có trách nhiệm tôn trọng, bảo vệ "
+            },
+            {
+              "rank": 3,
+              "score": 0.7350373086744985,
+              "document_title": "Bộ Luật dân sự 2015",
+              "article_number": "164",
+              "language": "vi",
+              "preview": "Phần thứ hai | QUYỀN SỞ HỮU VÀ QUYỀN KHÁC ĐỐI VỚI TÀI SẢN | Chương XI | QUY ĐỊNH CHUNG | Mục 2. BẢO VỆ QUYỀN SỞ HỮU, QUYỀN KHÁC ĐỐI VỚI TÀI SẢN Điều 164. Biện pháp bảo vệ quyền sở hữu, quyền khác đối với tài sản  1. Chủ "
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "query": "Một tổ chức cần những điều kiện nào để được công nhận là pháp nhân?",
+          "gold_answer": "Một tổ chức được công nhận là pháp nhân khi được thành lập theo luật, có cơ cấu tổ chức, có tài sản độc lập và tự chịu trách nhiệm bằng tài sản của mình, và nhân danh mình tham gia quan hệ pháp luật một cách độc lập.",
+          "mode": "no_filter",
+          "metadata_filter": {},
+          "expected_document_title": "Bộ Luật dân sự 2015",
+          "expected_article_number": "74",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "được thành lập",
+            "cơ cấu tổ chức",
+            "tài sản độc lập",
+            "tham gia quan hệ pháp luật"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.7863405158681297,
+              "document_title": "Bộ Luật dân sự 2015",
+              "article_number": "74",
+              "language": "vi",
+              "preview": "Phần thứ nhất | QUY ĐỊNH CHUNG | Chương IV | PHÁP NHÂN Điều 74. Pháp nhân  1. Một tổ chức được công nhận là pháp nhân khi có đủ các điều kiện sau đây:  a) Được thành lập theo quy định của Bộ luật này, luật khác có liên q"
+            },
+            {
+              "rank": 2,
+              "score": 0.7263127816546088,
+              "document_title": "Bộ Luật dân sự 2015",
+              "article_number": "86",
+              "language": "vi",
+              "preview": "Phần thứ nhất | QUY ĐỊNH CHUNG | Chương IV | PHÁP NHÂN Điều 86. Năng lực pháp luật dân sự của pháp nhân  1. Năng lực pháp luật dân sự của pháp nhân là khả năng của pháp nhân có các quyền, nghĩa vụ dân sự. Năng lực pháp l"
+            },
+            {
+              "rank": 3,
+              "score": 0.7204458791680578,
+              "document_title": "Bộ Luật dân sự 2015",
+              "article_number": "83",
+              "language": "vi",
+              "preview": "Phần thứ nhất | QUY ĐỊNH CHUNG | Chương IV | PHÁP NHÂN Điều 83. Cơ cấu tổ chức của pháp nhân  1. Pháp nhân phải có cơ quan điều hành. Tổ chức, nhiệm vụ và quyền hạn của cơ quan điều hành của pháp nhân được quy định trong"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "query": "When is Vietnam's Population Day?",
+          "gold_answer": "Vietnam's Population Day is December 26 each year.",
+          "mode": "no_filter",
+          "metadata_filter": {},
+          "expected_document_title": "Law on Population 2025",
+          "expected_article_number": "5",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "Population Day",
+            "December 26",
+            "each year"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8547965545881125,
+              "document_title": "Law on Population 2025",
+              "article_number": "5",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 5. Vietnam’s Population Day, National Action Month on Population  1. Vietnam’s Population Day is December 26 each year.  ...  ...  ..."
+            },
+            {
+              "rank": 2,
+              "score": 0.7368005662269997,
+              "document_title": "Law on Population 2025",
+              "article_number": "30",
+              "language": "en",
+              "preview": "Chapter VIII | IMPLEMENTATION Article 30. Entry into force  ...  ...  ...  2. Regulations under Point c and Point d Clause 1 Article 14 of this Law come into force from January 1, 2027.  3. Ordinance for Population No. 0"
+            },
+            {
+              "rank": 3,
+              "score": 0.7193725583007473,
+              "document_title": "Law on Population 2025",
+              "article_number": "7",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 7. Government policies regarding population  1. Population is the leading factor in construction, development, and protection of the country. Exercise population and growth policies"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "query": "Name three banned business lines under the Law on Investment 2025.",
+          "gold_answer": "Examples of banned business lines include business in narcotic substances, prostitution business, human trafficking and trade in human tissues or organs, business activities pertaining to asexual human reproduction, trade in firecrackers, debt collection services, national treasures, relics and antiques, and electronic cigarettes or heated tobacco products.",
+          "mode": "no_filter",
+          "metadata_filter": {},
+          "expected_document_title": "Law on Investment 2025",
+          "expected_article_number": "6",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "narcotic substances",
+            "prostitution",
+            "human trafficking",
+            "firecrackers",
+            "debt collection",
+            "electronic cigarettes"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8182925687513863,
+              "document_title": "Law on Investment 2025",
+              "article_number": "6",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 6. Banned business lines  1. The business investment activities below are banned:  a) Business in narcotic substances as specified in Appendix I to this Law;  ...  ...  ...  c) Busi"
+            },
+            {
+              "rank": 2,
+              "score": 0.7765671086351656,
+              "document_title": "Law on Investment 2025",
+              "article_number": "52",
+              "language": "en",
+              "preview": "Chapter VII | IMPLEMENTATION CLAUSE Article 52. Transitional provisions  17. The Government shall elaborate this Article.  This Law was passed by the 15th National Assembly of the Socialist Republic of Vietnam on this 11"
+            },
+            {
+              "rank": 3,
+              "score": 0.7636435735618246,
+              "document_title": "Law on Investment 2025",
+              "article_number": "40",
+              "language": "en",
+              "preview": "Chapter V | OUTWARD INVESTMENT ACTIVITIES Article 40. Business lines banned from outward investment  ...  ...  ...  2. Business lines with technologies and products banned from export in accordance with the law on foreig"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "query": "In the Planning Law 2025, what is the national planning database?",
+          "gold_answer": "The national planning database is a collection of planning databases, planning-related information and data, arranged and organized to meet requirements for access, exploitation, sharing, management and updating.",
+          "mode": "no_filter",
+          "metadata_filter": {},
+          "expected_document_title": "Planning Law 2025",
+          "expected_article_number": "3",
+          "top1_exact_match": false,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "collection of planning databases",
+            "planning-related information and data",
+            "access",
+            "sharing",
+            "management",
+            "updating"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8124484130678274,
+              "document_title": "Planning Law 2025",
+              "article_number": "45",
+              "language": "en",
+              "preview": "Chapter III | APPRAISAL, DECISION ON OR APPROVAL OF PLANNING SCHEMES | Section 1. ANNOUNCEMENT AND PROVISION OF INFORMATION ON PLANNING SCHEMES Article 45. National planning database  1. A national planning database shal"
+            },
+            {
+              "rank": 2,
+              "score": 0.780571752339221,
+              "document_title": "Planning Law 2025",
+              "article_number": "3",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 3. Definitions  13. “authority organizing planning scheme formulation” is the Government, Ministry or provincial People’s Committee which has the responsibility to organize formulat"
+            },
+            {
+              "rank": 3,
+              "score": 0.762582204855767,
+              "document_title": "Planning Law 2025",
+              "article_number": "44",
+              "language": "en",
+              "preview": "Chapter III | APPRAISAL, DECISION ON OR APPROVAL OF PLANNING SCHEMES | Section 1. ANNOUNCEMENT AND PROVISION OF INFORMATION ON PLANNING SCHEMES Article 44. National planning information system  1. The national planning i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": {
+        "mode": "gold_filter",
+        "queries": 5,
+        "top1_exact_rate": 1.0,
+        "top3_exact_rate": 1.0,
+        "pass_rate": 1.0,
+        "avg_keyword_recall": 1.0
+      },
+      "queries": [
+        {
+          "id": "q1",
+          "query": "Những phương thức bảo vệ quyền dân sự khi quyền dân sự bị xâm phạm là gì?",
+          "gold_answer": "Khi quyền dân sự bị xâm phạm, chủ thể có quyền tự bảo vệ hoặc yêu cầu cơ quan, tổ chức có thẩm quyền công nhận và bảo đảm quyền dân sự, buộc chấm dứt hành vi xâm phạm, buộc xin lỗi cải chính công khai, buộc thực hiện nghĩa vụ, buộc bồi thường thiệt hại, hủy quyết định cá biệt trái pháp luật và các yêu cầu khác theo luật.",
+          "mode": "gold_filter",
+          "metadata_filter": {
+            "document_title": "Bộ Luật dân sự 2015",
+            "article_number": "11",
+            "language": "vi"
+          },
+          "expected_document_title": "Bộ Luật dân sự 2015",
+          "expected_article_number": "11",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "công nhận",
+            "chấm dứt hành vi xâm phạm",
+            "xin lỗi",
+            "thực hiện nghĩa vụ",
+            "bồi thường thiệt hại",
+            "hủy quyết định"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8031366021105965,
+              "document_title": "Bộ Luật dân sự 2015",
+              "article_number": "11",
+              "language": "vi",
+              "preview": "Phần thứ nhất | QUY ĐỊNH CHUNG | Chương II | XÁC LẬP, THỰC HIỆN VÀ BẢO VỆ QUYỀN DÂN SỰ Điều 11. Các phương thức bảo vệ quyền dân sự  Khi quyền dân sự của cá nhân, pháp nhân bị xâm phạm thì chủ thể đó có quyền tự bảo vệ t"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "query": "Một tổ chức cần những điều kiện nào để được công nhận là pháp nhân?",
+          "gold_answer": "Một tổ chức được công nhận là pháp nhân khi được thành lập theo luật, có cơ cấu tổ chức, có tài sản độc lập và tự chịu trách nhiệm bằng tài sản của mình, và nhân danh mình tham gia quan hệ pháp luật một cách độc lập.",
+          "mode": "gold_filter",
+          "metadata_filter": {
+            "document_title": "Bộ Luật dân sự 2015",
+            "article_number": "74",
+            "language": "vi"
+          },
+          "expected_document_title": "Bộ Luật dân sự 2015",
+          "expected_article_number": "74",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "được thành lập",
+            "cơ cấu tổ chức",
+            "tài sản độc lập",
+            "tham gia quan hệ pháp luật"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.7863405158681297,
+              "document_title": "Bộ Luật dân sự 2015",
+              "article_number": "74",
+              "language": "vi",
+              "preview": "Phần thứ nhất | QUY ĐỊNH CHUNG | Chương IV | PHÁP NHÂN Điều 74. Pháp nhân  1. Một tổ chức được công nhận là pháp nhân khi có đủ các điều kiện sau đây:  a) Được thành lập theo quy định của Bộ luật này, luật khác có liên q"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "query": "When is Vietnam's Population Day?",
+          "gold_answer": "Vietnam's Population Day is December 26 each year.",
+          "mode": "gold_filter",
+          "metadata_filter": {
+            "document_title": "Law on Population 2025",
+            "article_number": "5",
+            "language": "en"
+          },
+          "expected_document_title": "Law on Population 2025",
+          "expected_article_number": "5",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "Population Day",
+            "December 26",
+            "each year"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8547965545881125,
+              "document_title": "Law on Population 2025",
+              "article_number": "5",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 5. Vietnam’s Population Day, National Action Month on Population  1. Vietnam’s Population Day is December 26 each year.  ...  ...  ..."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "query": "Name three banned business lines under the Law on Investment 2025.",
+          "gold_answer": "Examples of banned business lines include business in narcotic substances, prostitution business, human trafficking and trade in human tissues or organs, business activities pertaining to asexual human reproduction, trade in firecrackers, debt collection services, national treasures, relics and antiques, and electronic cigarettes or heated tobacco products.",
+          "mode": "gold_filter",
+          "metadata_filter": {
+            "document_title": "Law on Investment 2025",
+            "article_number": "6",
+            "language": "en"
+          },
+          "expected_document_title": "Law on Investment 2025",
+          "expected_article_number": "6",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "narcotic substances",
+            "prostitution",
+            "human trafficking",
+            "firecrackers",
+            "debt collection",
+            "electronic cigarettes"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8182925687513863,
+              "document_title": "Law on Investment 2025",
+              "article_number": "6",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 6. Banned business lines  1. The business investment activities below are banned:  a) Business in narcotic substances as specified in Appendix I to this Law;  ...  ...  ...  c) Busi"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "query": "In the Planning Law 2025, what is the national planning database?",
+          "gold_answer": "The national planning database is a collection of planning databases, planning-related information and data, arranged and organized to meet requirements for access, exploitation, sharing, management and updating.",
+          "mode": "gold_filter",
+          "metadata_filter": {
+            "document_title": "Planning Law 2025",
+            "article_number": "3",
+            "language": "en"
+          },
+          "expected_document_title": "Planning Law 2025",
+          "expected_article_number": "3",
+          "top1_exact_match": true,
+          "top3_exact_match": true,
+          "keyword_recall_topk": 1.0,
+          "matched_keywords": [
+            "collection of planning databases",
+            "planning-related information and data",
+            "access",
+            "sharing",
+            "management",
+            "updating"
+          ],
+          "passed": true,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.780571752339221,
+              "document_title": "Planning Law 2025",
+              "article_number": "3",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 3. Definitions  13. “authority organizing planning scheme formulation” is the Government, Ministry or provincial People’s Committee which has the responsibility to organize formulat"
+            },
+            {
+              "rank": 2,
+              "score": 0.7534681064863922,
+              "document_title": "Planning Law 2025",
+              "article_number": "3",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 3. Definitions  For the purposes of this Law, the terms below shall be construed as follows:  1. “planning” means the orientations for development, arrangement and distribution of s"
+            },
+            {
+              "rank": 3,
+              "score": 0.7284917083744457,
+              "document_title": "Planning Law 2025",
+              "article_number": "3",
+              "language": "en",
+              "preview": "Chapter I | GENERAL PROVISIONS Article 3. Definitions  10. “planning integration” means an integrated approach and comprehensive cooperation in addressing cross-sectoral, inter-regional, and inter-provincial issues relat"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

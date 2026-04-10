@@ -1,0 +1,102 @@
+[
+  {
+    "id": "q1",
+    "query": "Những phương thức bảo vệ quyền dân sự khi quyền dân sự bị xâm phạm là gì?",
+    "gold_answer": "Khi quyền dân sự bị xâm phạm, chủ thể có quyền tự bảo vệ hoặc yêu cầu cơ quan, tổ chức có thẩm quyền công nhận và bảo đảm quyền dân sự, buộc chấm dứt hành vi xâm phạm, buộc xin lỗi cải chính công khai, buộc thực hiện nghĩa vụ, buộc bồi thường thiệt hại, hủy quyết định cá biệt trái pháp luật và các yêu cầu khác theo luật.",
+    "expected_document_title": "Bộ Luật dân sự 2015",
+    "expected_article_number": "11",
+    "metadata_filter": {
+      "document_title": "Bộ Luật dân sự 2015",
+      "article_number": "11",
+      "language": "vi"
+    },
+    "must_include_keywords": [
+      "công nhận",
+      "chấm dứt hành vi xâm phạm",
+      "xin lỗi",
+      "thực hiện nghĩa vụ",
+      "bồi thường thiệt hại",
+      "hủy quyết định"
+    ],
+    "min_keyword_recall": 0.5
+  },
+  {
+    "id": "q2",
+    "query": "Một tổ chức cần những điều kiện nào để được công nhận là pháp nhân?",
+    "gold_answer": "Một tổ chức được công nhận là pháp nhân khi được thành lập theo luật, có cơ cấu tổ chức, có tài sản độc lập và tự chịu trách nhiệm bằng tài sản của mình, và nhân danh mình tham gia quan hệ pháp luật một cách độc lập.",
+    "expected_document_title": "Bộ Luật dân sự 2015",
+    "expected_article_number": "74",
+    "metadata_filter": {
+      "document_title": "Bộ Luật dân sự 2015",
+      "article_number": "74",
+      "language": "vi"
+    },
+    "must_include_keywords": [
+      "được thành lập",
+      "cơ cấu tổ chức",
+      "tài sản độc lập",
+      "tham gia quan hệ pháp luật"
+    ],
+    "min_keyword_recall": 0.5
+  },
+  {
+    "id": "q3",
+    "query": "When is Vietnam's Population Day?",
+    "gold_answer": "Vietnam's Population Day is December 26 each year.",
+    "expected_document_title": "Law on Population 2025",
+    "expected_article_number": "5",
+    "metadata_filter": {
+      "document_title": "Law on Population 2025",
+      "article_number": "5",
+      "language": "en"
+    },
+    "must_include_keywords": [
+      "Population Day",
+      "December 26",
+      "each year"
+    ],
+    "min_keyword_recall": 0.66
+  },
+  {
+    "id": "q4",
+    "query": "Name three banned business lines under the Law on Investment 2025.",
+    "gold_answer": "Examples of banned business lines include business in narcotic substances, prostitution business, human trafficking and trade in human tissues or organs, business activities pertaining to asexual human reproduction, trade in firecrackers, debt collection services, national treasures, relics and antiques, and electronic cigarettes or heated tobacco products.",
+    "expected_document_title": "Law on Investment 2025",
+    "expected_article_number": "6",
+    "metadata_filter": {
+      "document_title": "Law on Investment 2025",
+      "article_number": "6",
+      "language": "en"
+    },
+    "must_include_keywords": [
+      "narcotic substances",
+      "prostitution",
+      "human trafficking",
+      "firecrackers",
+      "debt collection",
+      "electronic cigarettes"
+    ],
+    "min_keyword_recall": 0.5
+  },
+  {
+    "id": "q5",
+    "query": "In the Planning Law 2025, what is the national planning database?",
+    "gold_answer": "The national planning database is a collection of planning databases, planning-related information and data, arranged and organized to meet requirements for access, exploitation, sharing, management and updating.",
+    "expected_document_title": "Planning Law 2025",
+    "expected_article_number": "3",
+    "metadata_filter": {
+      "document_title": "Planning Law 2025",
+      "article_number": "3",
+      "language": "en"
+    },
+    "must_include_keywords": [
+      "collection of planning databases",
+      "planning-related information and data",
+      "access",
+      "sharing",
+      "management",
+      "updating"
+    ],
+    "min_keyword_recall": 0.66
+  }
+]

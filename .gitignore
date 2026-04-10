@@ -16,4 +16,12 @@ __pycache__/
 .idea/
 .omx/
 .venv/
+venv/
 src_w_solution/
+
+# Local experiment artifacts
+.vector_store/
+
+# Keep only zipped corpus in git
+data/*
+!data/.gitkeep

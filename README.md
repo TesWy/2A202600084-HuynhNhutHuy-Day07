@@ -78,10 +78,31 @@ PY
 export OPENAI_EMBEDDING_MODEL=text-embedding-3-small
 ```
 
+### 4) Tùy chọn: Gemini embedder qua Google AI Studio API key
+
+Không cần cài thêm package ngoài `requirements.txt`:
+```bash
+export EMBEDDING_PROVIDER=gemini
+export GEMINI_API_KEY=your-ai-studio-key-here
+python3 - <<'PY'
+from src import GeminiEmbedder
+embedder = GeminiEmbedder()
+print(embedder._backend_name)
+print(len(embedder("embedding smoke test")))
+PY
+```
+
+- Model mặc định cho lựa chọn này là `gemini-embedding-2-preview`
+- Có thể đổi model bằng:
+```bash
+export GEMINI_EMBEDDING_MODEL=gemini-embedding-2-preview
+```
+- Nếu tài khoản của bạn có model embedding khác, chỉ cần override `GEMINI_EMBEDDING_MODEL`
+
 ### Quy tắc fallback
 
 - Nếu không chọn gì, lab dùng `_mock_embed`
-- Nếu chọn `local` hoặc `openai` nhưng setup thiếu, code sẽ tự fallback về `_mock_embed`
+- Nếu chọn `local`, `openai`, hoặc `gemini` nhưng setup thiếu, code sẽ tự fallback về `_mock_embed`
 - Có thể cấu hình qua `.env` mà không cần `source .env`
 - Script `main.py` chạy end-to-end và import public API từ package `src`
 
@@ -115,6 +136,22 @@ PY
 ```
 
 > Lưu ý: `OpenAIEmbedder` cần `OPENAI_API_KEY` hợp lệ trong môi trường hoặc `.env`.
+
+**Verify Gemini embedder**
+
+```bash
+python3 - <<'PY'
+from pathlib import Path
+from dotenv import load_dotenv
+from src import GeminiEmbedder
+
+load_dotenv(dotenv_path=Path(".env"), override=False)
+embedder = GeminiEmbedder()
+print(embedder._backend_name, len(embedder("embedding smoke test")))
+PY
+```
+
+> Lưu ý: `GeminiEmbedder` cần `GEMINI_API_KEY` hoặc `GOOGLE_API_KEY` hợp lệ trong môi trường hoặc `.env`.
 
 ---
 

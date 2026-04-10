@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 import sys
 from pathlib import Path
 
@@ -8,12 +7,7 @@ from dotenv import load_dotenv
 
 from src.agent import KnowledgeBaseAgent
 from src.embeddings import (
-    EMBEDDING_PROVIDER_ENV,
-    LOCAL_EMBEDDING_MODEL,
-    OPENAI_EMBEDDING_MODEL,
-    LocalEmbedder,
-    OpenAIEmbedder,
-    _mock_embed,
+    load_embedder_from_env,
 )
 from src.models import Document
 from src.store import EmbeddingStore
@@ -84,19 +78,7 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
         print(f"  - {doc.id}: {doc.metadata['source']}")
 
     load_dotenv(override=False)
-    provider = os.getenv(EMBEDDING_PROVIDER_ENV, "mock").strip().lower()
-    if provider == "local":
-        try:
-            embedder = LocalEmbedder(model_name=os.getenv("LOCAL_EMBEDDING_MODEL", LOCAL_EMBEDDING_MODEL))
-        except Exception:
-            embedder = _mock_embed
-    elif provider == "openai":
-        try:
-            embedder = OpenAIEmbedder(model_name=os.getenv("OPENAI_EMBEDDING_MODEL", OPENAI_EMBEDDING_MODEL))
-        except Exception:
-            embedder = _mock_embed
-    else:
-        embedder = _mock_embed
+    embedder = load_embedder_from_env(default_provider="mock")
 
     print(f"\nEmbedding backend: {getattr(embedder, '_backend_name', embedder.__class__.__name__)}")
 
