@@ -1,7 +1,7 @@
 # Báo Cáo Lab 7: Embedding & Vector Store
 
 **Họ tên:** Huỳnh Nhựt Huy
-**Nhóm:** [Tên nhóm]
+**Nhóm:** 07
 **Ngày:** 10/4/2026
 
 ---
